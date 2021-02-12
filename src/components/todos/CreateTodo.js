@@ -1,12 +1,31 @@
-import React, { Component } from 'react'
+import React, { Component } from "react";
 
 class CreateTodo extends Component {
+  constructor() {
+    super();
+    this.state = {
+      text: "",
+    };
+  }
+
+  handleChange(event) {
+    this.setState({
+      text: event.target.value,
+    });
+  }
+
   render() {
-    return(
+    return (
       <div>
-        Create Todo Component
+        <form action="">
+          <p>
+            <label>add todo</label>
+            <input type="text" onChange={this.handleChange} />
+          </p>
+          <input type="submit" value="" />
+        </form>
       </div>
-    )
+    );
   }
 }
 
